@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff" id="theme-color">
+  <title>Multiplayer Puzzle Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <div id="header">
+    <h1>Brain Battle</h1>
+    <div>
+      <button id="toggle-theme">Switch Theme</button>
+      <button id="exit-game" style="display:none;">Exit Game</button>
+    </div>
+  </div>
+
+  <div id="game">
+    <!-- Initial Game Mode Selection -->
+    <div id="game-mode-section">
+      <h2>Choose Game Mode</h2>
+      <button id="host-button">Start as Host</button>
+      <button id="guest-button">Start as Guest</button>
+    </div>
+
+    <!-- Player Name and Game ID Section -->
+    <div id="player-name-section" style="display:none;">
+      <label for="player-name">Enter Your Name: </label>
+      <input type="text" id="player-name" placeholder="Your Name" />
+      <input type="number" id="num-players" placeholder="Number of Players" style="display:none;" />
+      <input type="text" id="game-id" placeholder="Enter Game ID" style="display:none;" />
+      <button id="start-game" style="display:none;">Start Game</button>
+    </div>
+
+    <!-- Waiting Section for Host -->
+    <div id="waiting-section" style="display:none;">
+      <h2>Your Game ID: <span id="game-id-display"></span></h2>
+      <button id="ready-button">Ready</button>
+    </div>
+
+    <!-- Game Section -->
+    <div id="game-section" style="display:none;">
+      <div id="question"></div>
+      <input type="text" id="answer" placeholder="Your answer" />
+      <button id="submit">Submit</button>
+      <h2>Scores</h2>
+      <ul id="scores"></ul>
+    </div>
+
+    <!-- Winner Section -->
+    <div id="winner-section" style="display:none;">
+      <h2>Game Over!</h2>
+      <p id="winner"></p>
+      <button id="restart">Restart</button>
+    </div>
+
+    <!-- Chatbox Section -->
+    <div id="chatbox">
+      <div id="messages"></div>
+      <input type="text" id="chat-input" placeholder="Type a message..." />
+      <button id="send-message">Send</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
